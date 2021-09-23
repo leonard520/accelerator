@@ -9,6 +9,12 @@ accelerator:
     label: projectName
     description: The project name.
     defaultValue: Hello
+  - name: toggle
+    inputType: toggle
+    display: true
+    dataType: boolean
+    defaultValue: true
+
 engine:
   type: Chain
   transformations: 
