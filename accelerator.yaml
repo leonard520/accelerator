@@ -5,7 +5,5 @@ accelerator:
   tags:
   - Azure
 engine:
-  type: Chain
-  transformations:
-  - type: Exclude
-    patterns: ["*.png"]
+  type: Exclude
+  patterns: ["*.png"]
