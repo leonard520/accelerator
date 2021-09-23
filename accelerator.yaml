@@ -5,10 +5,12 @@ accelerator:
   tags:
   - Azure
   options:
-  - name: projectName
+  
+  - name: project name
     label: projectName
     description: The project name.
     defaultValue: Hello
+
   - name: toggle
     inputType: toggle
     display: true
