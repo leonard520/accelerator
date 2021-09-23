@@ -4,6 +4,14 @@ accelerator:
   iconUrl: https://raw.githubusercontent.com/leonard520/accelerator/main/asc.png
   tags:
   - Azure
+  options:
+  - name: projectName
+    label: projectName
+    description: The project name.
+    defaultValue: Hello
 engine:
-  type: Exclude
-  patterns: ["*.png"]
+  type: Chain
+  transformations: 
+  - type: Exclude
+    patterns: ['*.png']
+  - type: YTT
