@@ -4,3 +4,7 @@ accelerator:
   iconUrl: https://raw.githubusercontent.com/leonard520/accelerator/main/asc.png
   tags:
   - Azure
+type: Chain
+transformations:
+  - type: Exclude
+    patterns: ["*.png"]
