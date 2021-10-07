@@ -24,12 +24,12 @@ engine:
     - exclude: ['*.png']
     - include: ["**/pom.xml"]
       chain:
-        - type: ReplaceText
-            subsitutions:
-              - text: artifactIdName
-                with: '#projectName'
-    chain:
-      - condition: "#projectType == gradle"
-        exclude: ['**/pom.xml']
-      - condition: "#projectType == gradle"
-        exclude: ['*.gradle']
+      - type: ReplaceText
+        subsitutions:
+          - text: artifactIdName
+            with: '#projectName'
+  chain:
+    - condition: "#projectType == gradle"
+      exclude: ['**/pom.xml']
+    - condition: "#projectType == gradle"
+      exclude: ['*.gradle']
