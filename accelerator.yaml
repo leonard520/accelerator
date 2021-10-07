@@ -15,8 +15,10 @@ accelerator:
   - name: projectType
     inputType: select
     choices:
-      maven: Maven
-      gradle: Gradle
+    - value: maven
+      text: Maven
+    - value: gradle
+      text: Gradle
     defaultValue: maven
     display: true
 
