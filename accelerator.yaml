@@ -6,13 +6,14 @@ accelerator:
   - Azure
   options:
   - name: projectName
-    label: projectName
+    label: "Project name"
     description: The project name.
     defaultValue: hello-world
     required: true
     display: true
 
   - name: projectType
+    label: "Project type"
     inputType: select
     choices:
     - value: maven
@@ -34,7 +35,7 @@ engine:
         - type: ReplaceText
           subsitutions:
             - text: artifactIdName
-              with: '#projectName'
+              with: "#projectName"
     - condition: "#projectType == 'gradle'"
       include: ['*.gradle']
     - include: ["**/*.java", "README.md"]
