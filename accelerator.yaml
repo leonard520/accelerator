@@ -12,11 +12,11 @@ accelerator:
     defaultValue: hello-world
 
   - name: projectType
-      inputType: select
-      choices:
-        maven: Maven
-        gradle: Gradle
-      defaultValue: first
+    inputType: select
+    choices:
+      maven: Maven
+      gradle: Gradle
+    defaultValue: maven
 
 engine:
   merge:
