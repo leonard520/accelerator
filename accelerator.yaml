@@ -5,9 +5,21 @@ accelerator:
   tags:
   - Azure
   options:
-  - name: foo
-    dataType: string
-    inputType: text
+  - name: projectName
+    label: projectName
+    description: The project name.
+    defaultValue: hello-world
+    required: true
+    display: true
+
+  - name: projectType
+    inputType: select
+    choices:
+      maven: Maven
+      gradle: Gradle
+    defaultValue: maven
+    display: true
+
 engine:
   - include: ["some/file.txt"]
     chain:
