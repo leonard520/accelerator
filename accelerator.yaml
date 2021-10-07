@@ -33,9 +33,9 @@ engine:
       include: ['**/pom.xml']
       chain:
         - type: ReplaceText
-          subsitutions:
-            - text: artifactIdName
-              with: "#projectName"
+          substitutions:
+          - text: artifactIdName
+            with: "#projectName"
     - condition: "#projectType == 'gradle'"
       include: ['*.gradle']
     - include: ["**/*.java", "README.md"]
