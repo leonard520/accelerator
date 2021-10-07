@@ -20,16 +20,14 @@ accelerator:
 
 engine:
   merge:
-    - include: ["**/*"]
+    - include: ["**/*.java", "README.md"]
     - exclude: ['*.png']
-    - include: ["**/pom.xml"]
+    - condition: "#projectType == maven"
+      include: ['**/pom.xml']
       chain:
-      - type: ReplaceText
-        subsitutions:
-          - text: artifactIdName
-            with: '#projectName'
-  chain:
+        - type: ReplaceText
+          subsitutions:
+            - text: artifactIdName
+              with: '#projectName'
     - condition: "#projectType == gradle"
-      exclude: ['**/pom.xml']
-    - condition: "#projectType == gradle"
-      exclude: ['*.gradle']
+      include: ['*.gradle']
