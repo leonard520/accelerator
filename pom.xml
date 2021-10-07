@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloudevents-spring-boot-example</artifactId>
+    <artifactId>artifactIdName</artifactId>
 
     <properties>
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>

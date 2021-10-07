@@ -6,20 +6,30 @@ accelerator:
   - Azure
   options:
   
-  - name: project name
+  - name: projectName
     label: projectName
     description: The project name.
-    defaultValue: Hello
+    defaultValue: hello-world
 
-  - name: toggle
-    inputType: toggle
-    display: true
-    dataType: boolean
-    defaultValue: true
+  - name: projectType
+      inputType: select
+      choices:
+        maven: Maven
+        gradle: Gradle
+      defaultValue: first
 
 engine:
-  type: Chain
-  transformations: 
-  - type: Exclude
-    patterns: ['*.png']
-  - type: YTT
+  merge:
+    - include: ["**/*"]
+    - exclude: ['*.png']
+    - include: ["**/pom.xml"]
+      chain:
+        - type: ReplaceText
+            subsitutions:
+              - text: artifactIdName
+                with: '#projectName'
+    chain:
+      - condition: "#projectType == gradle"
+        exclude: ['**/pom.xml']
+      - condition: "#projectType == gradle"
+        exclude: ['*.gradle']
