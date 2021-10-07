@@ -10,6 +10,8 @@ accelerator:
     label: projectName
     description: The project name.
     defaultValue: hello-world
+    required: true
+    display: true
 
   - name: projectType
     inputType: select
@@ -17,6 +19,7 @@ accelerator:
       maven: Maven
       gradle: Gradle
     defaultValue: maven
+    display: true
 
 engine:
   include:
@@ -24,13 +27,13 @@ engine:
   exclude:
     ['*.png']
   merge:
-    - condition: "#projectType == maven"
+    - condition: "#projectType == 'maven'"
       include: ['**/pom.xml']
       chain:
         - type: ReplaceText
           subsitutions:
             - text: artifactIdName
               with: '#projectName'
-    - condition: "#projectType == gradle"
+    - condition: "#projectType == 'gradle'"
       include: ['*.gradle']
     - include: ["**/*.java", "README.md"]
