@@ -23,9 +23,18 @@ accelerator:
     display: true
 
 engine:
-  - include: ["some/file.txt"]
-    chain:
-    - type: ReplaceText
-      substitutions:
-      - text: bar
-        with: "#foo"
+  include:
+    ["**/*.md", "**/*.xml", "**/*.gradle", "**/*.java"]
+  exclude:
+    ['*.png']
+  merge:
+    - condition: "#projectType == 'maven'"
+      include: ['**/pom.xml']
+      chain:
+        - type: ReplaceText
+          subsitutions:
+            - text: artifactIdName
+              with: '#projectName'
+    - condition: "#projectType == 'gradle'"
+      include: ['*.gradle']
+    - include: ["**/*.java", "README.md"]
