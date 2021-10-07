@@ -19,9 +19,11 @@ accelerator:
     defaultValue: maven
 
 engine:
+  include:
+    ["**/*.md", "**/*.xml", "**/*.gradle", "**/*.java"]
+  exclude:
+    ['*.png']
   merge:
-    - include: ["**/*.java", "README.md"]
-    - exclude: ['*.png']
     - condition: "#projectType == maven"
       include: ['**/pom.xml']
       chain:
@@ -31,3 +33,4 @@ engine:
               with: '#projectName'
     - condition: "#projectType == gradle"
       include: ['*.gradle']
+    - include: ["**/*.java", "README.md"]
