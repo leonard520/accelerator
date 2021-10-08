@@ -25,7 +25,7 @@ accelerator:
 
 engine:
   include:
-    ["**/*.md", "**/*.xml", "**/*.gradle", "**/*.java", "*.properties"]
+    ["**/*.md", "**/*.xml", "**/*.gradle", "**/*.java", "**/*.properties"]
   exclude:
     ['*.png']
   merge:
@@ -38,4 +38,4 @@ engine:
             with: "#projectName"
     - condition: "#projectType == 'gradle'"
       include: ['*.gradle']
-    - include: ["**/*.java", "README.md", "*.properties"]
+    - include: ["**/*.java", "README.md", "**/*.properties"]
