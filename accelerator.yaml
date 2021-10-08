@@ -30,7 +30,7 @@ engine:
     ['*.png']
   merge:
     - condition: "#projectType == 'maven'"
-      include: ['**/pom.xml']
+      include: ['**/*.xml']
       chain:
         - type: ReplaceText
           substitutions:
